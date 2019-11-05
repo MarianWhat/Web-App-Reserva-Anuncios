@@ -1,42 +1,39 @@
 import React, {useState} from 'react';
+import PropTypes from 'prop-types';
 import firebase from 'firebase';
 
-const Login = ({ history }) => {
+const Login =({ history })=>{
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [err, setErr] = useState('');
 
-  console.log('history ', history);
 
   const FEmail = (e) => {
     setEmail(e.target.value);
+    console.log(e.target.value);
   };
   const FPassword = (e) => {
     setPassword(e.target.value);
+    console.log(e.target.value);
   };
-  const btnLogin = () => {
-	firebase.auth().signInWithEmailAndPassword(email, password)
-	.then((resp)=>{
-		
-	})
-	.catch();
-};
-
-
+  
 	
 	return(
 		<div>
 			<form onSubmit={(e) => {
           e.preventDefault();
           if (!email || !password) {
+            console.log('Debes colocar email y password');
             setErr('Debes colocar email y password');
             return false;
           }
-          firebase.auth().signInWithEmailAndPassword().then((res) => {
+          firebase.auth().signInWithEmailAndPassword(email,password).then((res) => {
             console.log(res);
+            console.log('autentificado');
             history.replace('/Home');
           }).catch((error) => {
+            console.error(error.message);
             setErr(error.message);
           });
         }}>
@@ -47,11 +44,13 @@ const Login = ({ history }) => {
 				<div>
 					<input type="text" name="password" value={password} onChange={FPassword} placeholder="pasword"/>
 				</div>
-				<br/>
-				<button type="submit" >Login</button>
+				<button type="submit" value="btn">Login</button>
+                {err && <p data-testid="mensajeError" >{err}</p>}
 			</form>
 		</div>
 	);
 };
-
+Login.propTypes = {
+    history: PropTypes.object.isRequired,
+  };
 export default Login;
