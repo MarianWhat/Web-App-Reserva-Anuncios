@@ -8,8 +8,6 @@ import ViewLogin from './components/pages/ViewLogin.jsx';
 import ViewHome from './components/pages/ViewHome.jsx';
 import ViewNewReserva from './components/pages/NewReserva';
 
-
-
 const App = () => (
     <Router>
       <Switch>
