@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import firebase from 'firebase';
 
-const Login =({ history })=>{
+const Login = ({ history }) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -15,7 +15,6 @@ const Login =({ history })=>{
   const FPassword = (e) => {
     setPassword(e.target.value);
   };
-  
   const btnLogin = () => {
 	firebase.auth().signInWithEmailAndPassword(email, password)
 	.then((resp)=>{

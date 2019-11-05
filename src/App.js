@@ -5,16 +5,16 @@ import {
   Route,
 } from 'react-router-dom';
 import ViewLogin from './components/pages/ViewLogin.jsx';
+import ViewNewReserva from './components/pages/NewReserva';
 
 
-const App = () =>{
-  return(
+const App = () => (
     <Router>
-      <Switch>
-        <Route path="/"><ViewLogin/> </Route>
-      </Switch>
-    </Router>
-  );
-};
+      <Switch/>
+        <Route path="/" component={ViewLogin} exact/>
+        <Route path="/new-reserva" component={ViewNewReserva} />
+      <Switch/>
+  </Router>
+);
 
 export default App;
