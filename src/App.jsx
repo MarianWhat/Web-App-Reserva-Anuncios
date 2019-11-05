@@ -5,16 +5,16 @@ import {
   Route,
 } from 'react-router-dom';
 import ViewLogin from './components/pages/ViewLogin.jsx';
+import ViewHome from './components/pages/ViewHome.jsx';
 
 
-const App = () =>{
-  return(
+const App = () => (
     <Router>
       <Switch>
-        <Route path="/"><ViewLogin/> </Route>
+      <Route path="/" component={ViewLogin} exact />
+        <Route path="/Home" component={ViewHome} />
       </Switch>
     </Router>
-  );
-};
+);
 
 export default App;
