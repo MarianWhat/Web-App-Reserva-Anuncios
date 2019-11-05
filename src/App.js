@@ -1,17 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { CampoProducto } from './components/predictive-input';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
+import ViewLogin from './components/pages/ViewLogin.jsx';
 
-function App() {
-  return (
-    <div className="app">
-      <header className="app-header">
-        <img src={logo} className="app-logo" alt="logo" />
-      </header>
-      <CampoProducto />
-    </div>
+
+const App = () =>{
+  return(
+    <Router>
+      <Switch>
+        <Route path="/"><ViewLogin/> </Route>
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;
