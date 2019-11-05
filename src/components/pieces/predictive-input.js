@@ -1,5 +1,5 @@
 import React from 'react';
-import firebase from 'firebase';
+// import firebase from 'firebase';
 
 // eslint-disable-next-line import/prefer-default-export
 export class CampoProducto extends React.Component {
@@ -15,12 +15,6 @@ export class CampoProducto extends React.Component {
   }
 }
 const ListProducto = (props) => {
-  firebase.firestore().collection('plans').get()
-    .then((es) => {
-      es.forEach((post) => {
-        console.log(post.id, post.data().schedule, post.data());
-      });
-    });
   // fff();
   // eslint-disable-next-line react/prop-types
   const listProduct = props.data.map((product, i) => <option key={i} value={product}/>);

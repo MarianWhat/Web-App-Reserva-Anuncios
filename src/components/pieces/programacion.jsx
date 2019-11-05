@@ -4,7 +4,6 @@ import React from 'react';
 export class CalendarioSelect extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { dia: '' };
 
     this.handleClickDia = this.handleClickDia.bind(this);
   }
