@@ -1,13 +1,15 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import firebase from 'firebase';
+import logoBlanco from '../../logo.svg';
+import Header from '../pieces/Header.jsx';
 
 const Login =({ history })=>{
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [err, setErr] = useState('');
-  const [arrProd, setArrProd] = useState([]);
+  // const [arrProd, setArrProd] = useState([]);
 
 
   const FEmail = (e) => {
@@ -22,8 +24,8 @@ const Login =({ history })=>{
 
 	
 	return(
-		<div>
-			<form onSubmit={(e) => {
+		<div className="cont-formulario">   
+			<form className="form-login" onSubmit={(e) => {
          e.preventDefault();
          if (!email || !password) {
            console.log('Debes colocar email y password');
@@ -39,14 +41,17 @@ const Login =({ history })=>{
            setErr(error.message);
          });
        }}>
+         <div className="cont-logo">
+         <img src={logoBlanco} />
+         <p>América Comercial</p>
+         </div>
 				<div>
-					<input type="text" name="email" value={email} onChange={FEmail} placeholder="email"/>
+          <input type="text" name="email" value={email} onChange={FEmail} placeholder="email"/>
 				</div>
-				<br />
 				<div>
-					<input type="text" name="password" value={password} onChange={FPassword} placeholder="pasword"/>
+					<input type="password" name="password" value={password} onChange={FPassword} placeholder="pasword"/>
 				</div>
-				<button type="submit" value="btn">Login</button>
+				<button className="btn" type="submit" value="btn">Login</button>
                 {err && <p data-testid="mensajeError" >{err}</p>}
 			</form>
 		</div>

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect } from 'react';
 import firebase from 'firebase';
 
 const ListPlans = () => {
@@ -10,7 +10,9 @@ const ListPlans = () => {
 
 		const userCurrent = () => firebase.auth().currentUser;
 		const user = userCurrent();
+		
 		  if (user) {
+			console.log(user.email);
 			firebase.firestore().collection('user').where('id', '==', userCurrent().uid).get()
 			  .then((result) => {
 				let arr=[];
@@ -55,23 +57,15 @@ const ListPlans = () => {
     setArrPrecie(arr);
 });
 
-	// const Precios = () => firebase.firestore().collection('list-price').where('id', '==',arrProd.products).get()
-	// .then((resp)=>{
-	// 	resp.forEach((elem)=>{
-	// 		// elem.data().name_product;
-	// 		console.log(elem);
-	// 	});
-
-	// })
-
-
-	useEffect(() => {
+  useEffect(() => {
 	Planes();
-	
 	}, []);
+
 	Precios();
+
 	return(
 		<div>
+			<div><p>Bienvenido {userCurrent()}</p></div>
 			<div>
 				<p>Elige el producto</p>
 				<select >
