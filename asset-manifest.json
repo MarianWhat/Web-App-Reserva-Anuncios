@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Web-App-Reserva-Anuncios/static/css/main.2dc64da8.chunk.css",
+    "main.js": "/Web-App-Reserva-Anuncios/static/js/main.d73df4c8.chunk.js",
+    "main.js.map": "/Web-App-Reserva-Anuncios/static/js/main.d73df4c8.chunk.js.map",
+    "runtime-main.js": "/Web-App-Reserva-Anuncios/static/js/runtime-main.5598b088.js",
+    "runtime-main.js.map": "/Web-App-Reserva-Anuncios/static/js/runtime-main.5598b088.js.map",
+    "static/js/2.f9ce4f0e.chunk.js": "/Web-App-Reserva-Anuncios/static/js/2.f9ce4f0e.chunk.js",
+    "static/js/2.f9ce4f0e.chunk.js.map": "/Web-App-Reserva-Anuncios/static/js/2.f9ce4f0e.chunk.js.map",
+    "index.html": "/Web-App-Reserva-Anuncios/index.html",
+    "precache-manifest.51ecaebea82041f9d6a62e8c63efa91b.js": "/Web-App-Reserva-Anuncios/precache-manifest.51ecaebea82041f9d6a62e8c63efa91b.js",
+    "service-worker.js": "/Web-App-Reserva-Anuncios/service-worker.js",
+    "static/css/main.2dc64da8.chunk.css.map": "/Web-App-Reserva-Anuncios/static/css/main.2dc64da8.chunk.css.map",
+    "static/media/logo.svg": "/Web-App-Reserva-Anuncios/static/media/logo.469cfe36.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5598b088.js",
+    "static/js/2.f9ce4f0e.chunk.js",
+    "static/css/main.2dc64da8.chunk.css",
+    "static/js/main.d73df4c8.chunk.js"
+  ]
+}
